@@ -1,0 +1,196 @@
+/*
+
+ANIMATIONS
+
+*/
+
+@keyframes load {
+    0%{
+        border-right-color: white;
+        border-top-color: transparent;
+    }
+    25%{
+        border-top-color: white;
+        border-left-color: transparent;
+    }
+    50%{
+        border-left-color: white;
+        border-bottom-color: transparent;
+    }
+    75%{
+        border-bottom-color: white;
+        border-right-color: transparent;
+    }
+    100%{
+        border-right-color: white;
+        border-top-color: transparent;
+    }
+}
+
+@keyframes bounce {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(-5deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(5deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+/*
+
+CSS GERAL
+
+*/
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: Verdana;
+    font-size: 18px;
+}
+
+body{
+    background-image: url('../img/bg_1.png');
+    background-size: 100% 100%;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+    overflow: hidden;
+}
+
+main{
+    display: none;
+}
+
+textarea{
+    background-color: rgba(0,0,0,0.0);
+    border: none;
+    max-width: 150px;
+    min-height: 200px;
+    resize: none;
+    color: white;
+    outline: none;
+    font-size: 24px;
+}
+
+#arvore {
+	transform: scale(-1, 1);
+	max-width: 55vw;
+	max-height: 100vh;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+#left{
+    position: relative;
+    width: 50%;
+    height: 100vh;
+}
+
+#right{
+    position: relative;
+    width: 50%;
+    height: 100vh;
+}
+
+.cartao{
+    max-width: 200px;
+    min-height: 400px;
+    margin: auto;
+    position: absolute;
+    left: 20%;
+    top: -450px;
+}
+
+.line{
+    display: block;
+    height: 50px;
+    width:5px;
+    background-color: #ffffff;
+    margin: auto auto;
+}
+
+#meuCartao{
+    padding: 20px;
+    background-color: rgb(214, 28, 32);
+    max-width: 200px;
+    min-height: 400px;
+    z-index: 500;
+    position: relative;
+}
+
+#enviarDesejo {
+	margin-top: 10px;
+	padding: 10px;
+	width: 100%;
+	background-color: rgba(255,255,255,0.5);
+	border: 1px solid rgba(255,255,255,0.5);
+	color: white;
+	outline: none;
+}
+
+#logo {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+#loadding{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-image: url('../img/bg_1.png');
+    z-index: 10000;
+    background-size: 100% 100%;
+    flex-direction: column;
+}
+
+#loadding p{
+    margin: 50px 0;
+    max-width: 500px;
+    text-align: center;
+}
+
+#loadding .logo{
+    border: 10px solid white;
+    padding: 50px;
+    border-radius: 50%;
+    animation: load 1s linear infinite;
+}
+
+.estrela{
+    position: absolute;
+    z-index: 50;
+}
+
+.cartaoCaindo{
+    position: absolute;
+    z-index: 51;
+    max-width: 41px;
+    max-height: 100px;
+}
+
+#cartaoArvoreGroup:hover{
+    cursor: pointer;
+}
+
+#cartaoArvoreGroup {
+    transition: 0.3s all ease;
+    animation: bounce 4s linear infinite;
+    transform-origin: center top;
+}
